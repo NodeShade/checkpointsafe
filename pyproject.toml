@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "checkpointsafe"
+version = "0.1.0"
+description = "A CLI and Python library for backing up and restoring ML training checkpoints and datasets."
+authors = ["Rajat Gupta <rajat.gupta@rgupta.dev>"]
+readme = "README.md"
+license = "MIT"
+packages = [{ include = "checkpointsafe" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+typer = { extras = ["all"], version = "^0.16.0" }
+boto3 = "^1.34.0"
+pyyaml = "^6.0"
+watchdog = "^6.0.0"
+tqdm = "^4.66.0"
+poetry-core = "^2.1.3"
+
+[tool.poetry.scripts]
+checkpointsafe = "checkpointsafe.cli:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
